@@ -9,6 +9,7 @@ from urllib.error import URLError
 def insert_row(new_fruit):
   with my_cnx.cursor() as my_cur:
     my_cur.execute("insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values ('"+new_fruit+"')")
+    
     return "Thanks for adding "+new_fruit
 
 streamlit.title("my parents new healthy dinner")
@@ -52,5 +53,6 @@ streamlit.dataframe(my_data_rows)
 add_my_fruit = streamlit.text_input('What fruit would you like to add?')
 
 back_from_funtion=insert_row(add_my_fruit)
+my_cnx.close()
 streamlit.text(back_from_funtion)
 

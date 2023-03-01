@@ -8,7 +8,7 @@ from urllib.error import URLError
 
 def insert_row(new_fruit):
   with my_cnx.cursor() as my_cur:
-    my_cur.execute("insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values ('"+????+"')")
+    my_cur.execute("insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values ('"+new_fruit+"')")
     return "Thanks for adding "+new_fruit
 
 streamlit.title("my parents new healthy dinner")
